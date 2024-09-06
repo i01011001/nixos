@@ -15,6 +15,7 @@
         ./gtk.nix
         ./alacritty.nix
         ./flameshot.nix
+        ./yazi.nix
     ];
     programs= {
         alacritty.enable = lib.mkForce false;
