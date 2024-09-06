@@ -8,7 +8,7 @@
         ./nvidia.nix
         ./fzf.nix
         ./emacs.nix
-        ./source/old_libunistring.nix
+        # ./source/old_libunistring.nix
     ];
 
     programs.zsh.enable =true;
