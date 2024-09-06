@@ -1,19 +1,19 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 { 
     imports =
         [ 
             ./hardware-configuration.nix
-
-        ./packages/systemPackages.nix
-        ./packages/nix-ld.nix
-        ./packages/extra.nix
-        ./packages/nh.nix
-        ./packages/opentabletdriver.nix
-        ./packages/nvidia.nix
-        ./packages/fzf.nix
-        # ./nouveau.nix
-        # ./emacs.nix
-        # ./awesome.nix
+            # ./packages/systemPackages.nix
+            # ./packages/nix-ld.nix
+            # ./packages/extra.nix
+            # ./packages/nh.nix
+            # ./packages/opentabletdriver.nix
+            # ./packages/nvidia.nix
+            # ./packages/fzf.nix
+            # # ./nouveau.nix
+            # # ./emacs.nix
+            # # ./awesome.nix
+            ./packages
         ];
 
     programs.zsh={
@@ -81,16 +81,16 @@
 
     };
 
-    nixpkgs.config = {
-        segger-jlink.acceptLicense = true;
-        allowInsecurePredicate = pkg: builtins.stringLength (lib.getName pkg) <= 30;
-        allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-            "segger-jlink"
-            "nrf-command-line-tools"
-        ];
-    };
-
-    services.udev.extraRules = builtins.readFile ./udev/zepyhr.d;
+    # nixpkgs.config = {
+    #     segger-jlink.acceptLicense = true;
+    #     allowInsecurePredicate = pkg: builtins.stringLength (lib.getName pkg) <= 30;
+    #     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    #         "segger-jlink"
+    #         "nrf-command-line-tools"
+    #     ];
+    # };
+    #
+    # services.udev.extraRules = builtins.readFile ./udev/zepyhr.d;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users= {

@@ -3,22 +3,7 @@
 		...
 }:{
 	imports = [
-        ./programs/foot.nix
-        ./programs/firefox/firefox.nix
-        ./programs/river/river.nix
-        ./programs/nixvim/nixvim.nix
-        ./programs/mako.nix
-        ./programs/ripgrep.nix
-        ./programs/fd.nix
-        ./programs/fzf.nix
-        ./programs/shell/zsh.nix
-
-        ./programs/bemenu.nix
-        ./programs/cursor.nix
-        ./programs/gtk.nix
-        # ./alacritty.nix
-        # ./tofi.nix
-        # ./flameshot.nix
+        ./programs
 	];
 
 	home = {

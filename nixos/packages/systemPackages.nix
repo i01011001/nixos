@@ -3,8 +3,9 @@ pkgs, ...
 }:
 {
     environment.systemPackages =with pkgs; [
-        (import ./source/wideriver.nix)
-        (import ./source/hello.nix {inherit pkgs;})
+        # (import ./source/wideriver.nix)
+        # (import ./source/hello.nix {inherit pkgs;})
+        wideriver
         websocat
         wlr-randr
         mosquitto
@@ -53,8 +54,8 @@ pkgs, ...
         lazygit
         # segger-jlink
         # nrfutil
-        nrf-command-line-tools
-        dtc
+        # nrf-command-line-tools
+        # dtc
         # nrfconnect
 
         skypeforlinux
@@ -74,6 +75,7 @@ pkgs, ...
         cheat
         digital
         lshw
+        helix
 
         # pureref
         # neovim

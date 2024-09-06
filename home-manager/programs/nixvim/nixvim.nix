@@ -18,7 +18,7 @@
         ./config/plugins/git.nix
         ./config/plugins/mini.nix
         ./config/plugins/markdown-preview.nix
-        ./config/plugins/multicursors.nix
+        # ./config/plugins/multicursors.nix
         # ./config/plugins/ufo.nix
         # ./config/plugins/neorg.nix
         #

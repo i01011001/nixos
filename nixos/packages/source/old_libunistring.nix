@@ -1,21 +1,24 @@
-with import <nixpkgs> {};
+{pkgs,lib,  ...}:
+let 
+    name = "libunistring";
+    ver = "0.9.10";
+in
+pkgs.stdenv.mkDerivation  {
+    pname = "${name}";
+    version = "${ver}";
 
-stdenv.mkDerivation rec {
-    pname = "libunistring";
-    version = "0.9.10";
-
-    src = fetchurl {
-        url = "mirror://gnu/libunistring/${pname}-${version}.tar.gz";
+    src = pkgs.fetchurl {
+        url = "mirror://gnu/libunistring/${name}-${ver}.tar.gz";
         sha256 = "sha256-qC5bMzM5qI6kYI5GNUeaHPsuAar7kl4SkLZXENQ/YQs=";
     };
 
     outputs = [ "out" "dev" "info" "doc" ];
 
     strictDeps = true;
-    propagatedBuildInputs = lib.optional (!stdenv.isLinux) libiconv;
+    propagatedBuildInputs = lib.optional (!pkgs.stdenv.isLinux) pkgs.libiconv;
 
     configureFlags = [
-        "--with-libiconv-prefix=${libiconv}"
+        "--with-libiconv-prefix=${pkgs.libiconv}"
     ];
 
     doCheck = false;

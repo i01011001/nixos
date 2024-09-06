@@ -2,13 +2,11 @@
     description = "Void's flake setup";
 
     inputs = {
-        nixpkgs= {
-            # url = "nixpkgs/nixos-unstable";
-            url = "github:nixos/nixpkgs?ref=nixos-unstable";
-        };
+        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-        home-manager = {
+        home-manager= {
             url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
         nixvim={
@@ -28,6 +26,7 @@
                 system = "${system}";
                 modules = [ 
                     ./nixos 
+
                     home-manager.nixosModules.home-manager
                     {
                         home-manager = {
@@ -37,9 +36,9 @@
                             users.void = (import ./home-manager );
                         };
                     }
+
                 ];
             };
-            formatter.${system} = pkgs.void;
         };
 
 }

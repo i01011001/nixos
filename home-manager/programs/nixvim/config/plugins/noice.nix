@@ -43,6 +43,11 @@
                 pattern = "?%?";
             };
         };
+        routes = [ 
+            { view = "notify"; filter = {event = "msg_showmode";}; }
+            { view = "cmdline"; filter = {event = "msg_showmode";}; }
+            # { filter = { event = "lsp"; kind = "progress"; opts = { skip = true ;}; };}
+        ];
 
     };
 
