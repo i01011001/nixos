@@ -21,7 +21,6 @@
         alacritty.enable = lib.mkForce false;
     };
     services= {
-           flameshot.enable = lib.mkForce false;
-        };
-
+        flameshot.enable = lib.mkForce false;
+    };
 }
