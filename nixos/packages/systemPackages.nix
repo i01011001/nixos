@@ -7,7 +7,6 @@ pkgs, ...
         # (import ./source/hello.nix {inherit pkgs;})
         wideriver
         websocat
-        wlr-randr
         mosquitto
         rlwrap
         tree 
@@ -15,7 +14,6 @@ pkgs, ...
         btop
         dconf 
         unzip
-        wl-clipboard
         lua
         luajit
         nodejs_22
@@ -34,7 +32,6 @@ pkgs, ...
         gcc
         gnumake
         zig
-        swayimg
         brightnessctl
         libnotify
         zathura
@@ -49,7 +46,9 @@ pkgs, ...
         fastfetch
         vscode
 
-        swaybg
+        # wayland native
+        grim slurp wl-clipboard wlr-randr
+
         # imagemagick
         lazygit
         # segger-jlink
@@ -62,11 +61,6 @@ pkgs, ...
         xfce.thunar
         slack
 
-        # xdg-desktop-portal
-        # xdg-desktop-portal-wlr
-        grim
-        slurp
-
         rnote
 
         krita
@@ -75,9 +69,5 @@ pkgs, ...
         cheat
         digital
         lshw
-        helix
-
-        # pureref
-        # neovim
     ];
 }

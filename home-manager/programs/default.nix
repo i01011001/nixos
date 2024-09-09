@@ -13,14 +13,9 @@
         ./bemenu.nix
         ./cursor.nix
         ./gtk.nix
-        ./alacritty.nix
-        ./flameshot.nix
+        # ./alacritty.nix
+        # ./flameshot.nix
         ./yazi.nix
+        # ./waybar.nix
     ];
-    programs= {
-        alacritty.enable = lib.mkForce false;
-    };
-    services= {
-        flameshot.enable = lib.mkForce false;
-    };
 }

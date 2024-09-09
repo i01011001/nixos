@@ -1,4 +1,4 @@
-{lib, ...}:{
+{
     imports = [
         ./systemPackages.nix
         ./nix-ld.nix
@@ -7,14 +7,9 @@
         ./opentabletdriver.nix
         ./nvidia.nix
         ./fzf.nix
-        ./emacs.nix
+        # ./awesome.nix
         # ./source/old_libunistring.nix
+        # ./sway.nix
     ];
-
-    programs.zsh.enable =true;
-
-    services= {
-        emacs.enable = lib.mkForce false;
-    };
 }
 

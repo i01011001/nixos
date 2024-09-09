@@ -1,17 +1,18 @@
 {
 	lib,
+    inputs,
 		...
 }:{
 	imports = [
         ./programs
-	];
+    ];
 
-	home = {
-		username = "void";
-		homeDirectory = lib.mkForce "/home/void/";
-	};
+    home = {
+        username = "void";
+        homeDirectory = lib.mkForce "/home/void/";
+    };
 
-# Enable home-manager and git
+    # Enable home-manager and git
 	programs.home-manager= {
 		enable = true;
 	};

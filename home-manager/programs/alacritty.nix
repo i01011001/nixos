@@ -1,6 +1,6 @@
 {
     programs.alacritty = {
-        enable = true;
+        enable = false;
        settings = {
             window = {
                 padding = { x=4; y=4; };
@@ -11,7 +11,7 @@
                     # bold = { family="Iosevka NF Medium"; style="Bold";};
                     # italic = { family="Iosevka NF Medium"; style="Italic";};
                     # bold_italic = { family="Iosevka NF Medium"; style="Regular";};
-                    size = 11;
+                    size = 7;
                     offset = {y=-2;};
             };
             colors = {

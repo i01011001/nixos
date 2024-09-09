@@ -6,7 +6,8 @@
             # nil-ls.enable = true;
             nixd.enable = true;
             marksman.enable = true;
-
+            zls.enable = true;
+            lua-ls.enable =true;
         };
 
         keymaps = {

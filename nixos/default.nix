@@ -3,16 +3,6 @@
     imports =
         [ 
             ./hardware-configuration.nix
-            # ./packages/systemPackages.nix
-            # ./packages/nix-ld.nix
-            # ./packages/extra.nix
-            # ./packages/nh.nix
-            # ./packages/opentabletdriver.nix
-            # ./packages/nvidia.nix
-            # ./packages/fzf.nix
-            # # ./nouveau.nix
-            # # ./emacs.nix
-            # # ./awesome.nix
             ./packages
         ];
 
@@ -37,10 +27,25 @@
 
     environment.pathsToLink = [ "/share/zsh" ];
 
-    fonts.packages = with pkgs; [
+    # Limit the number of generations to keep
+    boot.loader.systemd-boot.configurationLimit = 10;
+
+    #    nix-store --optimise
+    nix.settings.auto-optimise-store = true;
+
+    fonts = {packages = with pkgs; [
+        # nerdFronts
         (nerdfonts.override { fonts = [ "Iosevka" ]; })
-        noto-fonts #universal_fonts
+
+        # normal Fonts
+        noto-fonts 
+        noto-fonts-cjk
+        noto-fonts-emoji
+
+        # icon Fonts
+        material-design-icons
     ];
+    };
 
     hardware.bluetooth.enable = true; # enables support for Bluetooth
     hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
