@@ -69,5 +69,7 @@ pkgs, ...
         cheat
         digital
         lshw
+
+        thunderbird
     ];
 }

@@ -23,13 +23,13 @@ wideriver \ --layout            left        \
 --border-width                  1           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \
---border-color-focused-monocle  "0x565656"  \
---border-color-focused          "0x565656"  \
---border-color-unfocused        "0x404040"  &      
+--border-color-focused-monocle  "0x4a4a4a"  \
+--border-color-focused          "0x4a4a4a"  \
+--border-color-unfocused        "0x373737"  &      
 
-riverctl border-color-urgent "0x646464" 
-riverctl border-color-focused "0x565656" 
-riverctl border-color-unfocused "0x404040" 
+riverctl border-color-urgent "0x545454" 
+riverctl border-color-focused "0x4a4a4a" 
+riverctl border-color-unfocused "0x373737" 
 
 riverctl map normal Super+Control K    send-layout-cmd wideriver "--layout top"
 riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
