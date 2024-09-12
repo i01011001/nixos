@@ -5,7 +5,7 @@
             settings = {
                 main = {
                     font = "Iosevka NF Medium : size=11";
-                    line-height = 12;
+                    line-height = 13;
                     pad = "4x4";
                     box-drawings-uses-font-glyphs = "yes";
                     resize-delay-ms = 0;

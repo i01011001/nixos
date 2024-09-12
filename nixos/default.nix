@@ -101,13 +101,13 @@
     users= {
         users.void = {
             isNormalUser = true;
-            extraGroups = [ "wheel" "audio" "video" "dialout"]; # Enable ‘sudo’ for the user.
+            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers"]; # Enable ‘sudo’ for the user.
             initialPassword = "01011001";
             # shell = pkgs.zsh;
         };
         defaultUserShell=pkgs.zsh;
     };
-
+  programs.adb.enable = true;
 
     qt = {
         enable = true;

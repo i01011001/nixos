@@ -19,17 +19,17 @@ wideriver \ --layout            left        \
 --ratio-wide                    0.35        \
 --no-smart-gaps                             \
 --inner-gaps                    8           \
---outer-gaps                    5           \
+--outer-gaps                    4           \
 --border-width                  1           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \
---border-color-focused-monocle  "0x4a4a4a"  \
---border-color-focused          "0x4a4a4a"  \
---border-color-unfocused        "0x373737"  &      
+--border-color-focused-monocle  "0x464646"  \
+--border-color-focused          "0x464646"  \
+--border-color-unfocused        "0x343434"  &      
 
-riverctl border-color-urgent "0x545454" 
-riverctl border-color-focused "0x4a4a4a" 
-riverctl border-color-unfocused "0x373737" 
+riverctl border-color-urgent "0x4f4f4f" 
+riverctl border-color-focused "0x464646" 
+riverctl border-color-unfocused "0x343434" 
 
 riverctl map normal Super+Control K    send-layout-cmd wideriver "--layout top"
 riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
@@ -62,7 +62,6 @@ riverctl rule-add float
 riverctl rule-add dimensions '800' '540'
 
 exec mako &
-# wbg /etc/nixos/mono-slope.jpg &
 
 for i in $(seq 1 9)
 do
@@ -73,5 +72,4 @@ do
   riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 done
 
-wbg ~/Downloads/nixos-wp.jpg
-
+way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 

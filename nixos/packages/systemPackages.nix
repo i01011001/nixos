@@ -47,7 +47,7 @@ pkgs, ...
         vscode
 
         # wayland native
-        grim slurp wl-clipboard wlr-randr
+        grim slurp wl-clipboard way-displays
 
         # imagemagick
         lazygit
@@ -66,10 +66,16 @@ pkgs, ...
         krita
 
         saleae-logic-2
-        cheat
+        # cheat
         digital
         lshw
 
         thunderbird
+        scrcpy
     ];
+    services.udev.packages = [ 
+        pkgs.saleae-logic-2
+        # pkgs.android-udev-rules
+    ];
+
 }

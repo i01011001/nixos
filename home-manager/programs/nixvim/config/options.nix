@@ -40,7 +40,7 @@
             foldtext = "";
             foldnestmax = 4;
             foldlevel = 99;
-            foldlevelstart = 1;
+            foldlevelstart = 0;
 
             foldmethod = "expr";
             foldexpr = "v:lua.vim.treesitter.foldexpr()";
