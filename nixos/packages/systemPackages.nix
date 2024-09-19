@@ -50,9 +50,9 @@ pkgs, ...
 
         # imagemagick
         lazygit
-        # segger-jlink
+        segger-jlink
         # nrfutil
-        # nrf-command-line-tools
+        nrf-command-line-tools
         # dtc
         # nrfconnect
 
@@ -70,6 +70,7 @@ pkgs, ...
 
         thunderbird
         scrcpy
+        # wireshark
     ];
 
     services.udev.packages = [ 

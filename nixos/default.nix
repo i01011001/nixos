@@ -93,14 +93,13 @@
     nixpkgs.config={
         allowUnfree = true; 
         allowBroken = true;
-
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users= {
         users.void = {
             isNormalUser = true;
-            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers"]; # Enable ‘sudo’ for the user.
+            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers" "wireshark"]; # Enable ‘sudo’ for the user.
             initialPassword = "01011001";
             openssh.authorizedKeys.keys = [
                 "SHA256:6YCGgPIhDB2gq8bopDUZKZ2Mj1MEAWBGvBuX9NBPyLw root@nixos"];
@@ -127,6 +126,12 @@
         # XDG_STATE_HOME = "$HOME/.local/state";
     };
 
+    nixpkgs.config= {
+        segger-jlink.acceptLicense = true;
+        permittedInsecurePackages = [ "segger-jlink-qt4-796s" ];
+    };
+
     system.stateVersion = "23.11"; # Did you read the comment?
-}
+    }
+
 
