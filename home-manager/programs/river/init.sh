@@ -25,11 +25,11 @@ wideriver \ --layout            left        \
 --border-width-smart-gaps       0           \
 --border-color-focused-monocle  "0x464646"  \
 --border-color-focused          "0x464646"  \
---border-color-unfocused        "0x343434"  &      
+--border-color-unfocused        "0x363636"  &      
 
 riverctl border-color-urgent "0x4f4f4f" 
 riverctl border-color-focused "0x464646" 
-riverctl border-color-unfocused "0x343434" 
+riverctl border-color-unfocused "0x363636" 
 
 riverctl map normal Super+Control K    send-layout-cmd wideriver "--layout top"
 riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
@@ -49,12 +49,12 @@ riverctl map normal Super+Shift L send-layout-cmd wideriver "--count -1"
 riverctl map normal Super+Shift equal send-layout-cmd wideriver "--count 1"
 
 riverctl map normal Super+Control E send-layout-cmd wideriver "--stack even"
-riverctl map normal Super+Control W send-layout-cmd wideriver "--stack dwindle"
+riverctl map normal Super+Control S send-layout-cmd wideriver "--stack dwindle"
 riverctl map normal Super+Control I send-layout-cmd wideriver "--stack diminish"
 
-riverctl map-pointer normal Super BTN_LEFT move-view
-riverctl map-pointer normal Super BTN_RIGHT resize-view
-riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+# riverctl map-pointer normal Super BTN_LEFT move-view
+# riverctl map-pointer normal Super BTN_RIGHT resize-view
+# riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 riverctl set-cursor-warp on-focus-change 
 

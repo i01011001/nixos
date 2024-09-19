@@ -40,7 +40,6 @@ pkgs, ...
         blender
         arduino-cli
         gimp
-        wireshark
         nix-index
         p7zip
         fastfetch
@@ -66,16 +65,15 @@ pkgs, ...
         krita
 
         saleae-logic-2
-        # cheat
         digital
         lshw
 
         thunderbird
         scrcpy
     ];
+
     services.udev.packages = [ 
         pkgs.saleae-logic-2
-        # pkgs.android-udev-rules
     ];
 
 }

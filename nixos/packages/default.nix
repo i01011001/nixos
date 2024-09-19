@@ -7,6 +7,7 @@
         ./opentabletdriver.nix
         ./nvidia.nix
         ./fzf.nix
+        ./wireshark.nix
         # ./awesome.nix
         # ./source/old_libunistring.nix
         # ./sway.nix

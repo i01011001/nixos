@@ -39,7 +39,7 @@
             foldenable = true;
             foldtext = "";
             foldnestmax = 4;
-            foldlevel = 99;
+            foldlevel = 0;
             foldlevelstart = 0;
 
             foldmethod = "expr";

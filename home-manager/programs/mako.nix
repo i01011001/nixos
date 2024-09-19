@@ -2,7 +2,7 @@
     services.mako = {
         enable = true;
         backgroundColor = "#000000";
-        borderColor = "#666666";
+        borderColor = "#444444";
         textColor = "#bdbdbd";
         font = "Iosevka Nerd Font 10";
         width = 340;

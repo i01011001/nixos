@@ -77,6 +77,16 @@
     services.printing.enable = true;
 
     services.sshd.enable = true;
+    programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+    };
+
+    networking.firewall= {
+        enable = true;
+        allowedTCPPorts = [22 ];
+    };
+
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -86,28 +96,18 @@
 
     };
 
-    # nixpkgs.config = {
-    #     segger-jlink.acceptLicense = true;
-    #     allowInsecurePredicate = pkg: builtins.stringLength (lib.getName pkg) <= 30;
-    #     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    #         "segger-jlink"
-    #         "nrf-command-line-tools"
-    #     ];
-    # };
-    #
-    # services.udev.extraRules = builtins.readFile ./udev/zepyhr.d;
-
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users= {
         users.void = {
             isNormalUser = true;
             extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers"]; # Enable ‘sudo’ for the user.
             initialPassword = "01011001";
-            # shell = pkgs.zsh;
+            openssh.authorizedKeys.keys = [
+                "SHA256:6YCGgPIhDB2gq8bopDUZKZ2Mj1MEAWBGvBuX9NBPyLw root@nixos"];
         };
         defaultUserShell=pkgs.zsh;
     };
-  programs.adb.enable = true;
+    programs.adb.enable = true;
 
     qt = {
         enable = true;

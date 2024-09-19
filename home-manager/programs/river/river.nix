@@ -46,8 +46,8 @@
           "Super+Alt+Control K" = "snap up";
           "Super+Alt+Control L" = "snap right";
           "Super+Alt+Shift H" = "resize horizontal -100";
-          "Super+Alt+Shift J" = "resize vertical 100";
-          "Super+Alt+Shift K" = "resize vertical -100";
+          "Super+Alt+Shift J" = "resize vertical -100";
+          "Super+Alt+Shift K" = "resize vertical 100";
           "Super+Alt+Shift L" = "resize horizontal 100";
           "Super+Control F"="toggle-fullscreen";
           "Super Space"="toggle-float";
