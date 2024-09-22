@@ -9,7 +9,6 @@ pkgs, ...
         rlwrap
         tree 
         tmux 
-        btop
         dconf 
         unzip
         lua

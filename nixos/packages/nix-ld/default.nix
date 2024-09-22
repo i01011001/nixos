@@ -4,7 +4,7 @@
 {
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
-        (import ./sources/old_libunistring.nix {inherit pkgs;})
+        (import ../sources/old_libunistring {inherit pkgs;})
             stdenv.cc.cc
             openssl
             zlib
