@@ -1,69 +1,27 @@
-{pkgs ? import <nixpkgs> }:
-pkgs.stdenv.mkDerivation {
-  pname = "libunistring";
-  version = "0.9.10";
+{pkgs}:
+pkgs.stdenv.mkDerivation rec {
+    pname = "libunistring";
+    version = "0.9.10";
 
-  src = pkgs.fetchurl {
-    # url = "mirror://gnu/libunistring/${pname}-${version}.tar.gz";
-    url = "https://ftp.gnu.org/gnu/libunistring/libunistring-0.9.10.tar.xz";
-    sha256 = "sha256-oiUr7uyDCsREufaNazitiD2xmRnbNbUiIs+CfDhb22o=";
-  };
+    src = pkgs.fetchurl {
+        url = "mirror://gnu/libunistring/${pname}-${version}.tar.gz";
+        sha256 = "sha256-qC5bMzM5qI6kYI5GNUeaHPsuAar7kl4SkLZXENQ/YQs=";
+    };
 
-  outputs = [ "out" "dev" "info" "doc" ];
+    outputs = [ "out" "dev" "info" "doc" ];
 
-  strictDeps = true;
-  propagatedBuildInputs = pkgs.lib.optional (!pkgs.stdenv.isLinux) pkgs.libiconv;
+    strictDeps = true;
+    propagatedBuildInputs = pkgs.lib.optional (!pkgs.stdenv.isLinux) pkgs.libiconv;
 
-  configureFlags = [
-    "--with-libiconv-prefix=${pkgs.libiconv}"
-  ];
+    configureFlags = [
+        "--with-libiconv-prefix=${pkgs.libiconv}"
+    ];
 
-  doCheck = false;
+    doCheck = false;
 
-  /* This seems to cause several random failures like these, which I assume
-     is because of bad or missing target dependencies in their build system:
+    enableParallelChecking = false;
+    enableParallelBuilding = true;
 
-        ./unistdio/test-u16-vasnprintf2.sh: line 16: ./test-u16-vasnprintf1: No such file or directory
-        FAIL unistdio/test-u16-vasnprintf2.sh (exit status: 1)
-
-        FAIL: unistdio/test-u16-vasnprintf3.sh
-        ======================================
-
-        ./unistdio/test-u16-vasnprintf3.sh: line 16: ./test-u16-vasnprintf1: No such file or directory
-        FAIL unistdio/test-u16-vasnprintf3.sh (exit status: 1)
-  */
-  enableParallelChecking = false;
-  enableParallelBuilding = true;
-
-  meta = {
-    homepage = "https://www.gnu.org/software/libunistring/";
-
-    description = "Unicode string library";
-
-    longDescription = ''
-      This library provides functions for manipulating Unicode strings
-      and for manipulating C strings according to the Unicode
-      standard.
-
-      GNU libunistring is for you if your application involves
-      non-trivial text processing, such as upper/lower case
-      conversions, line breaking, operations on words, or more
-      advanced analysis of text.  Text provided by the user can, in
-      general, contain characters of all kinds of scripts.  The text
-      processing functions provided by this library handle all scripts
-      and all languages.
-
-      libunistring is for you if your application already uses the ISO
-      C / POSIX <ctype.h>, <wctype.h> functions and the text it
-      operates on is provided by the user and can be in any language.
-
-      libunistring is also for you if your application uses Unicode
-      strings as internal in-memory representation.
-    '';
-
-    license = pkgs.lib.licenses.lgpl3Plus;
-
-    maintainers = [ ];
-    platforms = pkgs.lib.platforms.all;
-  };
 }
+
+

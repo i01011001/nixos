@@ -1,21 +1,20 @@
 {lib, ...}:{
     imports = [
-        ./foot.nix
-        ./firefox/firefox.nix
-        ./river/river.nix
-        ./nixvim/nixvim.nix
-        ./mako.nix
-        ./ripgrep.nix
-        ./fd.nix
-        ./fzf.nix
-        ./shell/zsh.nix
-
-        ./bemenu.nix
-        ./cursor.nix
-        ./gtk.nix
+        ./foot
+        ./firefox
+        ./river
+        ./nixvim
+        ./mako
+        ./ripgrep
+        ./fd
+        ./fzf
+        ./shell
+        ./bemenu
+        ./cursor
+        ./gtk
         # ./alacritty.nix
         # ./flameshot.nix
-        ./yazi.nix
+        ./yazi
         # ./waybar.nix
     ];
 }

@@ -3,8 +3,6 @@ pkgs, ...
 }:
 {
     environment.systemPackages =with pkgs; [
-        # (import ./source/wideriver.nix)
-        # (import ./source/hello.nix {inherit pkgs;})
         wideriver
         websocat
         mosquitto
@@ -23,8 +21,7 @@ pkgs, ...
         flex
         bison
         gperf
-        python3
-        python3Packages.pip
+        (python3.withPackages(ps: with ps; [ pip pyserial psutil ]))
         ninja
         ccache
         dfu-util
@@ -45,16 +42,13 @@ pkgs, ...
         fastfetch
         vscode
 
-        # wayland native
+        #### WAYLAND
         grim slurp wl-clipboard way-displays
 
-        # imagemagick
         lazygit
-        segger-jlink
-        # nrfutil
-        nrf-command-line-tools
-        # dtc
-        # nrfconnect
+
+        #### NRF
+        nrf-command-line-tools segger-jlink nrfconnect
 
         skypeforlinux
         xfce.thunar
@@ -70,11 +64,11 @@ pkgs, ...
 
         thunderbird
         scrcpy
-        # wireshark
     ];
 
-    services.udev.packages = [ 
-        pkgs.saleae-logic-2
+    services.udev.packages = with pkgs;[ 
+        saleae-logic-2
+        segger-jlink
     ];
 
 }
