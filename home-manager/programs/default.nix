@@ -15,6 +15,7 @@
         # ./alacritty.nix
         # ./flameshot.nix
         ./yazi
+        ./btop
         # ./waybar.nix
     ];
 }
