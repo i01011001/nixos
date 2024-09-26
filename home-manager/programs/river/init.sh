@@ -14,7 +14,7 @@ wideriver \ --layout            left        \
 --layout-alt                    monocle     \
 --stack                         diminish    \
 --count-master                  1           \
---ratio-master                  0.618       \
+--ratio-master                  0.6         \
 --count-wide-left               2           \
 --ratio-wide                    0.35        \
 --no-smart-gaps                             \

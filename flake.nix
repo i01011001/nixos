@@ -18,27 +18,38 @@
     outputs = { nixpkgs, home-manager, ...}
         @ inputs:
         let 
-            system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system};
+            hostname = "nixos";
+            username = "void";
+            systems = [
+                "x86_64-linux"
+                "aarch64-linux"
+            ];
+            # pkgs = nixpkgs.legacyPackages.${systems};
+
+            forAllSystems = nixpkgs.lib.genAttrs systems;
+
         in
             {
-            nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-                system = "${system}";
+            # overlays = import ./overlays {inherit inputs;};
+
+            formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.${hostname});
+
+            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+                system = forAllSystems;
                 modules = [ 
                     ./nixos 
-
+                    ./overlays
                     home-manager.nixosModules.home-manager
                     {
                         home-manager = {
                             useUserPackages = true;
                             useGlobalPkgs = true;
                             extraSpecialArgs = { inherit inputs; };
-                            users.void = (import ./home-manager );
+                            users.${username} = (import ./home-manager );
                         };
                     }
 
                 ];
             };
         };
-
 }

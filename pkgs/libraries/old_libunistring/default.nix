@@ -1,4 +1,4 @@
-{pkgs}:
+{pkgs, ...}:
 pkgs.stdenv.mkDerivation rec {
     pname = "libunistring";
     version = "0.9.10";

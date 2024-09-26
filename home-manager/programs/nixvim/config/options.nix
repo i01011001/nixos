@@ -39,8 +39,8 @@
             foldenable = true;
             foldtext = "";
             foldnestmax = 4;
-            foldlevel = 0;
-            foldlevelstart = 0;
+            # foldlevel = 99;
+            # foldlevelstart = 99;
 
             foldmethod = "expr";
             foldexpr = "v:lua.vim.treesitter.foldexpr()";

@@ -8,6 +8,7 @@
             marksman.enable = true;
             zls.enable = true;
             lua-ls.enable =true;
+            yamlls.enable = true;
         };
 
         keymaps = {

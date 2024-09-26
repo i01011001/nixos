@@ -20,7 +20,8 @@ pkgs, ...
         flex
         bison
         gperf
-        (python3.withPackages(ps: with ps; [ pip pyserial psutil ]))
+        # (python3.withPackages(ps: with ps; [ pip pyserial psutil west]))
+        python3
         ninja
         ccache
         dfu-util
@@ -42,7 +43,7 @@ pkgs, ...
         vscode
 
         #### WAYLAND
-        grim slurp wl-clipboard way-displays
+        grim slurp wl-clipboard way-displays swayimg
 
         lazygit
 
@@ -63,11 +64,19 @@ pkgs, ...
 
         thunderbird
         scrcpy
-    ];
 
+        libreoffice
+
+        stlink
+        stlink-tool
+        gcc-arm-embedded
+
+        dtc
+    ];
     services.udev.packages = with pkgs;[ 
         saleae-logic-2
         segger-jlink
+        stlink
     ];
 
 }

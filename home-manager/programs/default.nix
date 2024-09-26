@@ -1,4 +1,4 @@
-{lib, ...}:{
+{lib,pkgs, ...}:{
     imports = [
         ./foot
         ./firefox
@@ -12,10 +12,8 @@
         ./bemenu
         ./cursor
         ./gtk
-        # ./alacritty.nix
-        # ./flameshot.nix
         ./yazi
         ./btop
-        # ./waybar.nix
+        # (import ./python {inherit pkgs;})
     ];
 }
