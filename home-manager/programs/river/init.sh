@@ -75,7 +75,6 @@ all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
 riverctl map normal Super S toggle-view-tags $sticky_tag
 riverctl spawn-tagmask ${all_but_sticky_tag}
 
-exec mako &&
 
 for i in $(seq 1 9)
 do
@@ -87,5 +86,6 @@ do
     riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
 done
 
+exec mako
 
 
