@@ -7,7 +7,7 @@
             nixd.enable = true;
             marksman.enable = true;
             zls.enable = true;
-            lua-ls.enable =true;
+            # lua-ls.enable =true;
             yamlls.enable = true;
         };
 

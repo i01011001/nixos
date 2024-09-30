@@ -43,7 +43,7 @@ pkgs, ...
         vscode
 
         #### WAYLAND
-        grim slurp wl-clipboard way-displays swayimg
+        wayshot slurp wl-clipboard way-displays swayimg
 
         lazygit
 
@@ -72,11 +72,15 @@ pkgs, ...
         gcc-arm-embedded
 
         dtc
+        system-config-printer       
+
+        river-tag-overlay
+        imagemagick
     ];
+
     services.udev.packages = with pkgs;[ 
         saleae-logic-2
         segger-jlink
         stlink
     ];
-
 }

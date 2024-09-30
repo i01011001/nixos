@@ -12,7 +12,7 @@
         enableLsColors = false;
         autosuggestions.async = false;
     };
-
+    environment.pathsToLink = [ "/share/zsh" ];
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -25,7 +25,6 @@
         FUNCNEST = 1000;
     };
 
-    environment.pathsToLink = [ "/share/zsh" ];
 
     # Limit the number of generations to keep
     boot.loader.systemd-boot.configurationLimit = 10;
@@ -73,10 +72,41 @@
 
     services.journald.extraConfig = "SystemMaxUse=1G";
 
-    # Enable CUPS to print documents.
-    services.printing.enable = true;
+    services.printing = {
+        enable = true;
+        cups-pdf.enable = true;
+        drivers = [
+           # (pkgs.callPackage ../pkgs/driver/dcpj125.nix {inherit pkgs;})
+        (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).driver
+        (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).cupswrapper
+        ];
+    };
+    hardware.printers = {
+        ensurePrinters = [
+            {
+                name = "DCP-J125";
+                location = "Home";
+                deviceUri = "usb://Brother/DCP-J125?serial=BROE2F352003";
+                # model = "drv:///sample.drv/generic.ppd";
+                model = "brother_dcpj125_printer_en.ppd";
+                ppdOptions = {
+                    PageSize = "A4";
+                };
+            }
+        ];
+    };
+    hardware.sane = {
+        enable = true;
+        brscan4={
+            enable = true;
+        };
+        brscan5 ={
+            enable = true;
+        };
+    };
 
     services.sshd.enable = true;
+
     programs.gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
@@ -84,9 +114,8 @@
 
     networking.firewall= {
         enable = true;
-        allowedTCPPorts = [22 ];
+        allowedTCPPorts = [22];
     };
-
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -99,7 +128,7 @@
     users= {
         users.void = {
             isNormalUser = true;
-            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers" "wireshark"]; # Enable ‘sudo’ for the user.
+            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers" "wireshark" "lp" "scanner"]; 
             initialPassword = "01011001";
             openssh.authorizedKeys.keys = [
                 "SHA256:6YCGgPIhDB2gq8bopDUZKZ2Mj1MEAWBGvBuX9NBPyLw root@nixos"];
@@ -117,13 +146,6 @@
         QT_QPA_PLATFORMTHEME = "qt5ct";
         QT_QPA_PLATFORM = "wayland";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-
-        # XDG_CACHE_HOME = "$HOME/.cache";
-        # XDG_CONFIG_DIRS = "/etc/xdg";
-        # XDG_CONFIG_HOME = "$HOME/.config";
-        # XDG_DATA_DIRS = "/usr/local/share/:/usr/share/";
-        # XDG_DATA_HOME = "$HOME/.local/share";
-        # XDG_STATE_HOME = "$HOME/.local/state";
     };
 
     nixpkgs.config= {
@@ -132,6 +154,6 @@
     };
 
     system.stateVersion = "23.11"; # Did you read the comment?
-    }
+}
 
 

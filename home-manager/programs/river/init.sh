@@ -61,15 +61,31 @@ riverctl set-cursor-warp on-focus-change
 riverctl rule-add float
 riverctl rule-add dimensions '800' '540'
 
-exec mako &
+# scratchpad
+scratch_tag=$((1 << 20 ))
+riverctl map normal Super P toggle-focused-tags ${scratch_tag}
+riverctl map normal Super+Shift P set-view-tags ${scratch_tag}
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+all_tags=$(((1 << 32) - 1))
+sticky_tag=$((1 << 31))
+all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
+
+riverctl map normal Super S toggle-view-tags $sticky_tag
+riverctl spawn-tagmask ${all_but_sticky_tag}
+
+exec mako &&
 
 for i in $(seq 1 9)
 do
-  tags=$((1 << ($i - 1)))
-  riverctl map normal Super $i set-focused-tags $tags
-  riverctl map normal Super+Shift $i set-view-tags $tags
-  riverctl map normal Super+Control $i toggle-focused-tags $tags
-  riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+    tags=$((1 << ($i - 1)))
+    riverctl map normal Super $i set-focused-tags $tags
+    riverctl map normal Super+Shift $i set-view-tags $tags
+    riverctl map normal Super+Control $i toggle-focused-tags $tags
+    riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+    riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
 done
 
-way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 
+
+

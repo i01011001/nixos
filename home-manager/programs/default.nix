@@ -14,6 +14,6 @@
         ./gtk
         ./yazi
         ./btop
-        # (import ./python {inherit pkgs;})
+        ./git
     ];
 }

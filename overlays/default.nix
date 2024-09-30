@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-    nixpkgs.overlays = [
+    nixpkgs.overlays =[
         (final: prev: {
             # wireshark = prev.wireshark.overrideAttrs (oldAttrs:{
             #     nativeBuildInputs =  builtins.filter (x: x != pkgs.python3) 
@@ -25,8 +25,10 @@
                         sha256 = "sha256-qC5bMzM5qI6kYI5GNUeaHPsuAar7kl4SkLZXENQ/YQs=";
                     };
                 });
+
         })
+
     ];
-    
+
 }
 
