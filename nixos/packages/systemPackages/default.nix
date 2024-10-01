@@ -76,6 +76,10 @@ pkgs, ...
 
         river-tag-overlay
         imagemagick
+        postman
+        
+        gdb
+        valgrind
     ];
 
     services.udev.packages = with pkgs;[ 

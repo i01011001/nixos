@@ -20,7 +20,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
+  fileSystems."/boot/efi" =
     { 
     #  device = "/dev/disk/by-uuid/65E2-AB2D";
       device = "/dev/disk/by-label/boot";

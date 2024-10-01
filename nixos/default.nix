@@ -12,22 +12,43 @@
         enableLsColors = false;
         autosuggestions.async = false;
     };
-    environment.pathsToLink = [ "/share/zsh" ];
+    environment = {
+        pathsToLink = [ "/share/zsh" ];
+        variables={
+            EDITOR = "nvim";
+            VISUAL = "nvim";
+            # ZDOTDIR="$HOME/.config/zsh/";
+            FUNCNEST = 1000;
+        };
+        sessionVariables = {
+            QT_QPA_PLATFORMTHEME = "qt5ct";
+            QT_QPA_PLATFORM = "wayland";
+            QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        };
 
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.timeout=0;
-
-    environment.variables={
-        EDITOR = "nvim";
-        VISUAL = "nvim";
-        # ZDOTDIR="$HOME/.config/zsh/";
-        FUNCNEST = 1000;
     };
 
+    boot.loader={
+        grub={
+            enable = true;
+            backgroundColor = "#000000";
+            device = "nodev";
+            useOSProber = true;
+            efiSupport = true;
+            gfxmodeBios = "auto";
+            gfxmodeEfi = "auto";
+            splashImage = null;
+        };
+        systemd-boot.enable = false;
 
-    # Limit the number of generations to keep
-    boot.loader.systemd-boot.configurationLimit = 10;
+        efi={
+            canTouchEfiVariables = true;
+            efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
+        };
+
+        timeout=5;
+    };
+
 
     #    nix-store --optimise
     nix.settings.auto-optimise-store = true;
@@ -46,8 +67,12 @@
     ];
     };
 
-    hardware.bluetooth.enable = true; # enables support for Bluetooth
-    hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    hardware = {
+        bluetooth= {
+            enable = true; # enables support for Bluetooth
+            powerOnBoot = true;
+        };
+    }; 
     services.blueman.enable = true;
 
     networking={
@@ -76,9 +101,9 @@
         enable = true;
         cups-pdf.enable = true;
         drivers = [
-           # (pkgs.callPackage ../pkgs/driver/dcpj125.nix {inherit pkgs;})
-        (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).driver
-        (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).cupswrapper
+            # (pkgs.callPackage ../pkgs/driver/dcpj125.nix {inherit pkgs;})
+            (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).driver
+            (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).cupswrapper
         ];
     };
     hardware.printers = {
@@ -142,12 +167,7 @@
         platformTheme = "qt5ct";
         style = "adwaita-dark";
     };
-    environment.sessionVariables = {
-        QT_QPA_PLATFORMTHEME = "qt5ct";
-        QT_QPA_PLATFORM = "wayland";
-        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    };
-
+    
     nixpkgs.config= {
         segger-jlink.acceptLicense = true;
         permittedInsecurePackages = [ "segger-jlink-qt4-796s" ];
