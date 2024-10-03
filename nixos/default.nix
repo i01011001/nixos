@@ -24,6 +24,11 @@
             QT_QPA_PLATFORMTHEME = "qt5ct";
             QT_QPA_PLATFORM = "wayland";
             QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+            _JAVA_AWT_WM_NONREPARENTING=1;
+            XCURSOR_SIZE=24;
+            WLR_RENDERER="vulkan";
+            __GL_GSYNC_ALLOWED=0;
+            __GL_VRR_ALLOWED=0;
         };
 
     };

@@ -80,6 +80,7 @@ pkgs, ...
         
         gdb
         valgrind
+        home-manager
     ];
 
     services.udev.packages = with pkgs;[ 
