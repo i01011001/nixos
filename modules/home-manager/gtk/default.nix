@@ -3,7 +3,7 @@
     gtk= {
         enable = true;
         font ={
-            name = "Iosevka Nerd Font Medium ";
+            name = "Iosevka Nerd Font Mono";
             size = 11;
         };
         theme = {

@@ -2,7 +2,10 @@
    programs.nixvim.plugins.lsp = {
         enable = true;
         servers = {
-            clangd.enable = true;
+            clangd = {
+                enable = true;
+                cmd = ["clangd" "--offset-encoding=utf-16"];
+            };
             # nil-ls.enable = true;
             nixd.enable = true;
             marksman.enable = true;

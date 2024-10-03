@@ -8,9 +8,6 @@
         ./nvidia
         ./fzf
         ./wireshark
-        # ./awesome
-        # ./source/old_libunistring
-        # ./sway
     ];
 }
 

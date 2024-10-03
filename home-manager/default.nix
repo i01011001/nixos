@@ -4,7 +4,7 @@
 		...
 }:{
 	imports = [
-        ./programs
+        ../modules/home-manager
     ];
 
     home = {

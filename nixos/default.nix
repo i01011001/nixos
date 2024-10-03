@@ -3,7 +3,7 @@
     imports =
         [ 
             ./hardware-configuration.nix
-            ./packages
+            ../modules/nixos
         ];
 
     programs.zsh={
@@ -33,7 +33,7 @@
             enable = true;
             backgroundColor = "#000000";
             device = "nodev";
-            useOSProber = true;
+            useOSProber = false;
             efiSupport = true;
             gfxmodeBios = "auto";
             gfxmodeEfi = "auto";
