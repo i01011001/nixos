@@ -1,4 +1,4 @@
-{
+{pkgs,  ...}: {
     imports = [
         ./systemPackages
         ./nix-ld
@@ -9,6 +9,6 @@
         ./fzf
         ./wireshark
     ];
-
 }
+
 

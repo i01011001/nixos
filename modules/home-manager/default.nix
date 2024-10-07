@@ -1,4 +1,4 @@
-{lib,pkgs, ...}:{
+{lib,pkgs,inputs,  ...}:{
     imports = [
         ./foot
         ./firefox

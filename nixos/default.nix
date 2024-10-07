@@ -3,7 +3,7 @@
     imports =
         [ 
             ./hardware-configuration.nix
-            ../modules/nixos
+            ../modules/nixos 
         ];
 
     programs.zsh={
@@ -25,8 +25,8 @@
             QT_QPA_PLATFORM = "wayland";
             QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
             _JAVA_AWT_WM_NONREPARENTING=1;
-            XCURSOR_SIZE=24;
-            WLR_RENDERER="vulkan";
+            # XCURSOR_SIZE=24;
+            # WLR_RENDERER="vulkan";
             __GL_GSYNC_ALLOWED=0;
             __GL_VRR_ALLOWED=0;
         };
@@ -107,8 +107,8 @@
         cups-pdf.enable = true;
         drivers = [
             # (pkgs.callPackage ../pkgs/driver/dcpj125.nix {inherit pkgs;})
-            (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).driver
-            (import ../pkgs/driver/dcpj125.nix {inherit pkgs;}).cupswrapper
+            (import ../customs/driver/dcpj125.nix {inherit pkgs;}).driver
+            (import ../customs/driver/dcpj125.nix {inherit pkgs;}).cupswrapper
         ];
     };
     hardware.printers = {

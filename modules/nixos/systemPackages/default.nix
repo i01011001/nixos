@@ -3,6 +3,9 @@ pkgs, ...
 }:
 {
     environment.systemPackages =with pkgs; [
+
+        (import ../../../customs/pkgs/river-ultitile {inherit pkgs;})
+
         wideriver
         websocat
         mosquitto
