@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{ 
+{ pkgs, ... }: { 
     imports =
         [ 
             ./hardware-configuration.nix
@@ -26,7 +25,7 @@
             QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
             _JAVA_AWT_WM_NONREPARENTING=1;
             # XCURSOR_SIZE=24;
-            # WLR_RENDERER="vulkan";
+            WLR_RENDERER="vulkan";
             __GL_GSYNC_ALLOWED=0;
             __GL_VRR_ALLOWED=0;
         };
@@ -158,7 +157,7 @@
     users= {
         users.void = {
             isNormalUser = true;
-            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers" "wireshark" "lp" "scanner"]; 
+            extraGroups = [ "wheel" "audio" "video" "dialout" "input" "adbusers" "wireshark" "lp" "scanner" ]; 
             initialPassword = "01011001";
             openssh.authorizedKeys.keys = [
                 "SHA256:6YCGgPIhDB2gq8bopDUZKZ2Mj1MEAWBGvBuX9NBPyLw root@nixos"];

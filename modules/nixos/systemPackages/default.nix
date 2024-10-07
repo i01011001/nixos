@@ -46,7 +46,7 @@ pkgs, ...
         vscode
 
         #### WAYLAND
-        wayshot slurp wl-clipboard way-displays swayimg
+        wayshot slurp wl-clipboard way-displays swayimg swaybg
 
         lazygit
 

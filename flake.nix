@@ -13,6 +13,15 @@
             url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        hyprland.url = "github:hyprwm/Hyprland";
+        split-monitor-workspaces = {
+            url = "github:Duckonaut/split-monitor-workspaces";
+            inputs.hyprland.follows = "hyprland";         
+        };
+        hy3 = {
+            url = "github:outfoxxed/hy3"; 
+            inputs.hyprland.follows = "hyprland";
+        };
     };
 
     outputs = { nixpkgs, home-manager, ...}
@@ -20,8 +29,8 @@
         let 
             hostname = "nixos";
             username = "void";
-            system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system};
+            # system = "x86_64-linux";
+            # pkgs = nixpkgs.legacyPackages.${system};
         in
             {
 
@@ -37,7 +46,12 @@
                             useUserPackages = true;
                             useGlobalPkgs = true;
                             extraSpecialArgs = { inherit inputs; };
-                            users.${username} = (import ./home-manager );
+                            users.${username} = {
+                                imports = [
+                                    ./home-manager
+                                    # ./modules/home-manager/hypr
+                                ] ;
+                            };
                         };
                     }
                 ];
