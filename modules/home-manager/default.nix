@@ -14,7 +14,7 @@
         ./gtk
         ./yazi
         ./btop
-        ./hyprland
+        ./hypr
         ./git
     ];
 }
