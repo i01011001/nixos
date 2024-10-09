@@ -46,7 +46,9 @@ pkgs, ...
         vscode
 
         #### WAYLAND
-        wayshot slurp wl-clipboard way-displays swayimg swaybg
+       wayshot slurp wl-clipboard way-displays wlr-randr
+
+        swayimg swaybg swayidle 
 
         lazygit
 
@@ -77,7 +79,6 @@ pkgs, ...
         dtc
         system-config-printer       
 
-        river-tag-overlay
         imagemagick
         postman
         

@@ -16,5 +16,6 @@
         ./btop
         ./hypr
         ./git
+        ./sway
     ];
 }

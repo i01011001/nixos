@@ -87,6 +87,7 @@ do
     riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
 done
 
+exec "$@" &&
 exec mako
 
 

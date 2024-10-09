@@ -176,11 +176,6 @@ bind = $mainMod, Space, togglefloating,
 bind = $mainMod, R, exec, $menu
 
 
-bind = $mainMod, H, movefocus, l
-bind = $mainMod, L, movefocus, r
-bind = $mainMod, K, movefocus, u
-bind = $mainMod, J, movefocus, d
-
 # Master
 bind = $mainMod SHIFT, J, layoutmsg, swapnext 
 bind = $mainMod SHIFT, K, layoutmsg, swapprev
@@ -191,8 +186,8 @@ bind = $mainMod CONTROL, J, layoutmsg, orientationbottom
 bind = $mainMod CONTROL, SEMICOLON, layoutmsg, orientationcenter
 bind = $mainMod SHIFT, H, layoutmsg, mfact -0.05
 bind = $mainMod SHIFT, L, layoutmsg, mfact +0.05
-# bind = $mainMod, K, layoutmsg, cycleprev
-# bind = $mainMod, J, layoutmsg, cyclenext
+bind = $mainMod, K, layoutmsg, cycleprev
+bind = $mainMod, J, layoutmsg, cyclenext
 bind = $mainMod, Return, layoutmsg, swapwithmaster master
 
 
@@ -255,7 +250,13 @@ bind = $mainMod SHIFT, 8, split-movetoworkspacesilent, 8
 bind = $mainMod SHIFT, 9, split-movetoworkspacesilent, 9
 
 
-bind = $mainMod , TAB, split-cycleworkspaces, next
+# bind = $mainMod , TAB, split-cycleworkspaces, next
 
-bind = $mainMod SHIFT, Period, split-changemonitorsilent, next
-bind = $mainMod SHIFT, Comma, split-changemonitorsilent, prev
+# bind = $mainMod SHIFT, Period, split-changemonitorsilent, next
+# bind = $mainMod SHIFT, Comma, split-changemonitorsilent, prev
+
+bind = $mainMod, Period, focusmonitor, r
+bind = $mainMod, Comma, focusmonitor, l
+
+bind = $mainMod SHIFT, Period, movewindow, mon:r
+bind = $mainMod SHIFT, Comma, movewindow, mon:l
