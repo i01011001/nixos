@@ -4,7 +4,7 @@ pkgs, ...
 {
     environment.systemPackages =with pkgs; [
 
-        (import ../../../customs/pkgs/river-ultitile {inherit pkgs;})
+        # (import ../../../customs/pkgs/river-ultitile {inherit pkgs;})
 
         wideriver
         websocat
@@ -46,9 +46,8 @@ pkgs, ...
         vscode
 
         #### WAYLAND
-       wayshot slurp wl-clipboard way-displays wlr-randr
-
-        swayimg swaybg swayidle 
+       wayshot slurp wl-clipboard way-displays wlr-randr swayimg swaybg 
+       wlopm
 
         lazygit
 
@@ -85,6 +84,8 @@ pkgs, ...
         gdb
         valgrind
         home-manager
+        nvtop       
+        discord-unstable
     ];
 
     services.udev.packages = with pkgs;[ 

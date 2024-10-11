@@ -8,6 +8,7 @@
         ./nvidia
         ./fzf
         ./wireshark
+        ./awesome
     ];
 }
 

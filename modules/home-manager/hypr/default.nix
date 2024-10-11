@@ -13,7 +13,7 @@
 
         ];
 
-        extraConfig = builtins.readFile ./hyprland.conf.bak;
+        extraConfig = builtins.readFile ./hyprland.conf;
 
     };
 }

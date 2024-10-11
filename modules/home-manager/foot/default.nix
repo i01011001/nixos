@@ -4,19 +4,17 @@
             enable = true;
             settings = {
                 main = {
-                    font = "Iosevka NF Medium : size=11";
+                    font = "Iosevka NF Medium: size=11";
                     line-height = 13;
                     pad = "4x4";
-                    box-drawings-uses-font-glyphs = "yes";
+# box-drawings-uses-font-glyphs = "yes";
                     resize-delay-ms = 0;
-                };
-                key-bindings= {
-# scroll-up-line = "Control+Shift+k";
-# scroll-down-line = "Control+Shift+j";
+                    initial-window-size-chars="82x23";
+                    initial-window-mode="windowed";
                 };
 
                 tweak={
-                    scaling-filter = "cubic";
+                    scaling-filter = "none";
                     box-drawing-solid-shades = "no";
                     font-monospace-warn = "no";
                     max-shm-pool-size-mb = 2048;

@@ -23,13 +23,13 @@ wideriver \ --layout            left        \
 --border-width                  1           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \
---border-color-focused-monocle  "0x46494d"  \
---border-color-focused          "0x46494d"  \
---border-color-unfocused        "0x363636"  &      
+--border-color-focused-monocle  "0x666666"  \
+--border-color-focused          "0x666666"  \
+--border-color-unfocused        "0x444444"  &      
 
-riverctl border-color-urgent "0x4f4f4f" 
-riverctl border-color-focused "0x46494d" 
-riverctl border-color-unfocused "0x363636" 
+riverctl border-color-urgent  "0x666666" 
+riverctl border-color-focused "0x666666" 
+riverctl border-color-unfocused "0x444444" 
 
 riverctl map normal Super+Control K    send-layout-cmd wideriver "--layout top"
 riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
@@ -87,7 +87,7 @@ do
     riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
 done
 
-exec "$@" &&
-exec mako
+exec mako &
+wlr-randr --output HDMI-A-2 --pos -1440,0
 
 

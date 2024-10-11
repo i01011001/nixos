@@ -22,7 +22,7 @@
           "Super+Shift F11" = "spawn 'brightnessctl set 5%-'";
           "Super+Shift F12" = "spawn 'brightnessctl set 5%+'";
           "Super+Shift F" = "spawn firefox";
-          "Super+Shift Return" = "spawn foot";
+          "Super+Shift Return" = "spawn alacritty";
           "Super O" = "spawn \'bemenu-run --fn \"Iosevka Nerd Font 11\" -p \">>\" --tf \"#999999[ff]\" --hf \"#999999[ff]\"  -b\'";
           "Super+Control B" = "spawn \'notify-send \"Capacity\" \"`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`\"\'";
           "Super+Control V" = "spawn \'notify-send \"Volume\" \"`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `\"\' ";

@@ -40,6 +40,6 @@ in
                 plugins = true;
             };
         };
-    };
 
+    };
 }

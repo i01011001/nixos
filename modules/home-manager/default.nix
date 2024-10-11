@@ -1,6 +1,7 @@
 {lib,pkgs,inputs,  ...}:{
     imports = [
-        ./foot
+        ./alacritty
+        # ./foot
         ./firefox
         ./river
         ./nixvim
@@ -14,8 +15,8 @@
         ./gtk
         ./yazi
         ./btop
-        ./hypr
+        # ./hypr
         ./git
-        ./sway
+        # ./sway
     ];
 }

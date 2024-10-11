@@ -22,17 +22,6 @@
         sessionVariables = {
             QT_QPA_PLATFORMTHEME = "qt5ct";
             _JAVA_AWT_WM_NONREPARENTING=1;
-
-            # Hardware cursors not yet working on wlroots
-            WLR_NO_HARDWARE_CURSORS=1;
-
-            # General wayland environment variables
-            XDG_SESSION_TYPE="wayland";
-            QT_QPA_PLATFORM="wayland";
-            QT_WAYLAND_DISABLE_WINDOWDECORATION=1;
-            # Firefox wayland environment variable
-            MOZ_ENABLE_WAYLAND=1;
-            MOZ_USE_XINPUT2=1;
         };
     };
 

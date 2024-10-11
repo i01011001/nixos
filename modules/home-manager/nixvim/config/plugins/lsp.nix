@@ -12,6 +12,7 @@
             zls.enable = true;
             # lua-ls.enable =true;
             yamlls.enable = true;
+            hls.enable = true;
         };
 
         keymaps = {

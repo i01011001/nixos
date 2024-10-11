@@ -1,10 +1,11 @@
 {
     programs.nixvim.plugins= {
             treesitter = {
-                enable = true;
-                nixGrammars = true;
-                settings.indent.enable = true;
+                enable = false;
+                folding = true;
+                nixGrammars = false;
+                settings.indent.enable = false;
             };
-            rainbow-delimiters.enable = true;
+            rainbow-delimiters.enable = false;
     };
 }

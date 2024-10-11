@@ -25,8 +25,14 @@
                         sha256 = "sha256-qC5bMzM5qI6kYI5GNUeaHPsuAar7kl4SkLZXENQ/YQs=";
                     };
                 });
+            discord-unstable = prev.discord.override{
+                    withOpenASAR = true;
+                    withVencord = true;
+                };
 
         })
+
+
 
     ];
 

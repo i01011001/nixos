@@ -1,6 +1,6 @@
 {
     programs.alacritty = {
-        enable = false;
+        enable = true;
        settings = {
             window = {
                 padding = { x=4; y=4; };
@@ -11,9 +11,18 @@
                     # bold = { family="Iosevka NF Medium"; style="Bold";};
                     # italic = { family="Iosevka NF Medium"; style="Italic";};
                     # bold_italic = { family="Iosevka NF Medium"; style="Regular";};
-                    size = 7;
+                    size = 11;
                     offset = {y=-2;};
             };
+            keyboard = {
+                bindings = [
+                    {
+                     key = "N";
+                     mods = "Control|Shift";
+                     action = "SpawnNewInstance";
+                   }
+                ];
+                };
             colors = {
                 primary = {
                     background = "#000000";
