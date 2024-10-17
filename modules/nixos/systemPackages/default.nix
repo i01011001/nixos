@@ -1,5 +1,5 @@
 {
-pkgs, ...
+pkgs,inputs,  ...
 }:
 {
     environment.systemPackages =with pkgs; [
@@ -38,7 +38,7 @@ pkgs, ...
         unrar
         mpv
         blender
-        arduino-cli
+        # arduino-cli
         gimp
         nix-index
         p7zip
@@ -83,9 +83,14 @@ pkgs, ...
         
         gdb
         valgrind
-        home-manager
-        nvtop       
+        file
+        nvtopPackages.full
         discord-unstable
+        playerctl
+
+        transmission_4-gtk
+        # ladybird
+        # wineWowPackages.stagingFull
     ];
 
     services.udev.packages = with pkgs;[ 

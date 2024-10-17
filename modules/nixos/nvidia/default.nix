@@ -24,10 +24,10 @@ config, lib, ...
 
     hardware.nvidia = {
 
-        nvidiaPersistenced = true;
+        # nvidiaPersistenced = true;
         # Modesetting is required.
         modesetting.enable = true;
-        forceFullCompositionPipeline = true;
+        # forceFullCompositionPipeline = true;
         powerManagement.enable = false;
 
         # Fine-grained power management. Turns off GPU when not in use.

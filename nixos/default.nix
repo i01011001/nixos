@@ -19,9 +19,14 @@
             # ZDOTDIR="$HOME/.config/zsh/";
             FUNCNEST = 1000;
         };
-        sessionVariables = {
+        variables = {
             QT_QPA_PLATFORMTHEME = "qt5ct";
             _JAVA_AWT_WM_NONREPARENTING=1;
+
+            QT_WAYLAND_DISABLE_WINDOWDECORATION=1;
+
+            WLR_NO_HARDWARE_CURSORS=1;
+# WLR_RENDERER="vulkan";
         };
     };
 

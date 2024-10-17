@@ -3,7 +3,7 @@
   display     : none !important;
 }
 
-#back-button,
+#back-button
 {
   -moz-box-ordinal-group: 0 !important;
   order: -1 !important;

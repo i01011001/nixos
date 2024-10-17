@@ -15,19 +15,19 @@
         };
 
         hyprland.url = "github:hyprwm/Hyprland";
-        # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
         split-monitor-workspaces = {
             url = "github:Duckonaut/split-monitor-workspaces";
             inputs.hyprland.follows = "hyprland";         
         };
-        hy3 = {
-            url = "github:outfoxxed/hy3"; 
-            inputs.hyprland.follows = "hyprland";
+
+        firefox = {
+            url = "github:nix-community/flake-firefox-nightly";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
     outputs = { nixpkgs, home-manager, ...}
-        @ inputs:
+    @ inputs:
         let 
             hostname = "nixos";
             username = "void";
@@ -51,7 +51,7 @@
                             users.${username} = {
                                 imports = [
                                     ./home-manager
-                                    # ./modules/home-manager/hypr
+                                    ./modules/home-manager/hypr
                                 ] ;
                             };
                         };

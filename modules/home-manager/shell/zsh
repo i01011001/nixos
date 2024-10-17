@@ -62,8 +62,6 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export IDF_PATH="$HOME/code/esp/idf/esp-idf"
 export RMAKER_PATH="$HOME/code/esp/idf/esp-components/esp-rainmaker/"
 
-fnvim() { nvim "$(fd --type file| fzf)" }
-
 export FZF_DEFAULT_COMMAND='fd --type file --hidden '
 export FZF_DEFAULT_OPTS='--height 40% --info=inline --layout=reverse --no-scrollbar --no-separator --highlight-line  --marker="#" --color=bw'
 

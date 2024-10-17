@@ -18,17 +18,17 @@ wideriver \ --layout            left        \
 --count-wide-left               2           \
 --ratio-wide                    0.35        \
 --no-smart-gaps                             \
---inner-gaps                    8           \
---outer-gaps                    4           \
+--inner-gaps                    6           \
+--outer-gaps                    3           \
 --border-width                  1           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \
---border-color-focused-monocle  "0x666666"  \
---border-color-focused          "0x666666"  \
+--border-color-focused-monocle  "0x676767"  \
+--border-color-focused          "0x676767"  \
 --border-color-unfocused        "0x444444"  &      
 
-riverctl border-color-urgent  "0x666666" 
-riverctl border-color-focused "0x666666" 
+riverctl border-color-urgent  "0x676767" 
+riverctl border-color-focused "0x676767" 
 riverctl border-color-unfocused "0x444444" 
 
 riverctl map normal Super+Control K    send-layout-cmd wideriver "--layout top"
@@ -88,6 +88,6 @@ do
 done
 
 exec mako &
-wlr-randr --output HDMI-A-2 --pos -1440,0
-
+wlr-randr --output HDMI-A-2 --pos -1440,0 &
+swaybg -m center -i /etc/nixos/modules/home-manager/river/simple-nix-black.png &
 

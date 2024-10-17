@@ -2,8 +2,8 @@
     imports = [
         ./alacritty
         # ./foot
-        ./firefox
-        ./river
+        # ./firefox
+        # ./river
         ./nixvim
         ./mako
         ./ripgrep
@@ -15,6 +15,7 @@
         ./gtk
         ./yazi
         ./btop
+        ./floorp
         # ./hypr
         ./git
         # ./sway

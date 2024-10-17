@@ -28,5 +28,6 @@
             old_libunistring
 
             gobject-introspection
+            cjson
             ];
 }

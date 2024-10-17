@@ -15,7 +15,7 @@
                         lavender = "#8782af";
                         teal = "#7bafaf";
 
-                        text = "#A0A0A0";
+                        text = "#BBBBBB";
 
                         subtext1 = "#f0f0f0"; 
                         subtext0 = "#d0d0d0"; 
