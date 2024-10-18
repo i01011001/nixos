@@ -9,11 +9,11 @@
 # "browser.uidensity" = 1;
                     "browser.compact.show" = true;
                     "browser.compactmode.show" = true;
-                    "sidebar.animation.enabled" = false;
-                    "layers.offmainthreadcomposition.log-animations" = false;
-                    "layout.css.prefixes.animations" = false;
-                    "layout.css.animation-composition.enabled" = false;
-                    "browser.suppress_first_window_animation" = false;
+                    # "sidebar.animation.enabled" = false;
+                    # "layers.offmainthreadcomposition.log-animations" = false;
+                    # "layout.css.prefixes.animations" = false;
+                    # "layout.css.animation-composition.enabled" = false;
+                    # "browser.suppress_first_window_animation" = false;
                     "floorp.browser.sidebar.enable"=false;
                     "floorp.browser.sidebar.is.displayed"=false	;
                     "floorp.browser.sidebar.right"=false ;

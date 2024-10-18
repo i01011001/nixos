@@ -89,8 +89,6 @@ pkgs,inputs,  ...
         playerctl
 
         transmission_4-gtk
-        # ladybird
-        # wineWowPackages.stagingFull
     ];
 
     services.udev.packages = with pkgs;[ 

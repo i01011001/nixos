@@ -20,10 +20,10 @@
             inputs.hyprland.follows = "hyprland";         
         };
 
-        firefox = {
-            url = "github:nix-community/flake-firefox-nightly";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        # firefox = {
+        #     url = "github:nix-community/flake-firefox-nightly";
+        #     inputs.nixpkgs.follows = "nixpkgs";
+        # };
     };
 
     outputs = { nixpkgs, home-manager, ...}
